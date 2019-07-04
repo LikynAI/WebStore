@@ -1,0 +1,29 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
+using WebStore.ViewModels;
+
+namespace WebStore.Controllers
+{
+	public class CustomerController : Controller
+	{
+		private readonly List<CustomerView> employeeList = new List<CustomerView>
+		{
+			new CustomerView{Id = 1, FirsName = "Иван", SurName = "Иванов", Age = 24},
+			new CustomerView{Id = 2, FirsName = "Иван", SurName = "Иванов", Age = 24},
+			new CustomerView{Id = 3, FirsName = "Иван", SurName = "Иванов", Age = 24}
+		};
+
+        public IActionResult Index()
+        {
+            return View(employeeList);
+        }
+
+		public IActionResult Details(int id)
+		{
+			return View(employeeList.FirstOrDefault(x => x.Id == id));
+		}
+    }
+}

@@ -33,6 +33,8 @@ namespace WebStore
 				app.UseDeveloperExceptionPage();
 			}
 
+			app.UseStaticFiles();
+
 			//app.UseMvcWithDefaultRoute(); or
 			app.UseMvc(routes =>
 			routes.MapRoute

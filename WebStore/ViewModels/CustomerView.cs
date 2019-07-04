@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace WebStore.ViewModels
 {
-	public class EmployeeView
+	public class CustomerView
 	{
 		public int Id { get; set; }
 		public string FirsName { get; set; }
