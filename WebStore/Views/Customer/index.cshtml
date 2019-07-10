@@ -1,0 +1,26 @@
+﻿@{
+	ViewData["Title"] = "Customers";
+}
+
+@model IEnumerable<WebStore.ViewModels.CustomerView>
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>index</title>
+</head>
+<body>
+	<div>
+		<table>
+			@foreach (var empoyee in Model)
+			{
+				<tr>
+					<td>@Html.ActionLink(empoyee.FirsName, "Details", new { id = empoyee.Id })</td>
+					<td>@empoyee.SurName</td>
+					<td>@empoyee.Age</td>
+				</tr>
+			}
+		</table>
+	</div>
+</body>
+</html>
