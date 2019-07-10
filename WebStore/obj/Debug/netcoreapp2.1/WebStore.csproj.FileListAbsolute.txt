@@ -43,8 +43,6 @@ D:\My\WebStore\WebStore.git\WebStore\obj\Debug\netcoreapp2.1\WebStore.Views.pdb
 D:\My\WebStore\WebStore.git\WebStore\obj\Debug\netcoreapp2.1\WebStore.dll
 D:\My\WebStore\WebStore.git\WebStore\obj\Debug\netcoreapp2.1\WebStore.pdb
 D:\My\WebStore\WebStore.git\WebStore\obj\Debug\netcoreapp2.1\WebStore.csproj.CopyComplete
-D:\My\WebStore\WebStore.git\WebStore\obj\Debug\netcoreapp2.1\Razor\Views\Customer\Details.g.cshtml.cs
-D:\My\WebStore\WebStore.git\WebStore\obj\Debug\netcoreapp2.1\Razor\Views\Customer\Index.g.cshtml.cs
 D:\My\WebStore\WebStore.git\WebStore\obj\Debug\netcoreapp2.1\Razor\Views\Home\index.g.cshtml.cs
 D:\My\WebStore\WebStore.git\WebStore\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_Layout.g.cshtml.cs
 D:\My\WebStore\WebStore.git\WebStore\obj\Debug\netcoreapp2.1\Razor\Views\_ViewImports.g.cshtml.cs
@@ -58,3 +56,6 @@ D:\My\WebStore\WebStore.git\WebStore\obj\Debug\netcoreapp2.1\Razor\Views\Home\Ch
 D:\My\WebStore\WebStore.git\WebStore\obj\Debug\netcoreapp2.1\Razor\Views\Home\Login.g.cshtml.cs
 D:\My\WebStore\WebStore.git\WebStore\obj\Debug\netcoreapp2.1\Razor\Views\Home\ProductDetails.g.cshtml.cs
 D:\My\WebStore\WebStore.git\WebStore\obj\Debug\netcoreapp2.1\Razor\Views\Home\Contact.g.cshtml.cs
+D:\My\WebStore\WebStore.git\WebStore\obj\Debug\netcoreapp2.1\Razor\Views\Employee\Details.g.cshtml.cs
+D:\My\WebStore\WebStore.git\WebStore\obj\Debug\netcoreapp2.1\Razor\Views\Employee\Edit.g.cshtml.cs
+D:\My\WebStore\WebStore.git\WebStore\obj\Debug\netcoreapp2.1\Razor\Views\Employee\index.g.cshtml.cs
