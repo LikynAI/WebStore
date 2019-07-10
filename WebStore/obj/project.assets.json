@@ -12576,11 +12576,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\My\\WebStore\\WebStore\\WebStore.csproj",
+      "projectUniqueName": "D:\\My\\WebStore\\WebStore.git\\WebStore\\WebStore.csproj",
       "projectName": "WebStore",
-      "projectPath": "D:\\My\\WebStore\\WebStore\\WebStore.csproj",
+      "projectPath": "D:\\My\\WebStore\\WebStore.git\\WebStore\\WebStore.csproj",
       "packagesPath": "C:\\Users\\Alex\\.nuget\\packages\\",
-      "outputPath": "D:\\My\\WebStore\\WebStore\\obj\\",
+      "outputPath": "D:\\My\\WebStore\\WebStore.git\\WebStore\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

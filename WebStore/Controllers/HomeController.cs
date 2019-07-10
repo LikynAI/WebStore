@@ -3,27 +3,59 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using WebStore.ViewModels;
 
 namespace WebStore.Controllers
 {
-	public class HomeController : Controller
-	{
-		private readonly List<EmployeeView> employeeList = new List<EmployeeView>
+    public class HomeController : Controller
+    {
+		public IActionResult Index()
 		{
-			new EmployeeView{Id = 1, FirsName = "Иван", SurName = "Иванов", Age = 24},
-			new EmployeeView{Id = 2, FirsName = "Иван", SurName = "Иванов", Age = 24},
-			new EmployeeView{Id = 3, FirsName = "Иван", SurName = "Иванов", Age = 24}
-		};
-
-        public IActionResult Index()
-        {
-            return View(employeeList);
-        }
-
-		public IActionResult Details(int id)
-		{
-			return View(employeeList.FirstOrDefault(x => x.Id == id));
+			return View();
 		}
-    }
+
+		public IActionResult Blog()
+		{
+			return View();
+		}
+
+		public IActionResult BlogSingle()
+		{
+			return View();
+		}
+
+		public IActionResult Cart()
+		{
+			return View();
+		}
+
+		public IActionResult CheckOut()
+		{
+			return View();
+		}
+
+		public IActionResult Contact()
+		{
+			return View();
+		}
+
+		public IActionResult Login()
+		{
+			return View();
+		}
+
+		public IActionResult NotFound()
+		{
+			return View();
+		}
+
+		public IActionResult ProductDetails()
+		{
+			return View();
+		}
+
+		public IActionResult Shop()
+		{
+			return View();
+		}
+	}
 }

@@ -1,9 +1,9 @@
-﻿
-@model IEnumerable<WebStore.ViewModels.EmployeeView>
-
-@{
-	Layout = null;
+﻿@{
+	ViewData["Title"] = "EmployeeDetails";
 }
+
+@model WebStore.ViewModels.EmployeeView
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,9 +13,9 @@
 	<div>
 		<table>
 			<tr>
-				<td>Model.FirsName</td>
-				<td>Model.SurName</td>
-				<td>Model.Age</td>
+				<td>@Model.FirstName</td>
+				<td>@Model.SurName</td>
+				<td>@Model.Age</td>
 			</tr>
 		</table>
 		@Html.ActionLink("Home", "Index")
