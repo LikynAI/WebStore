@@ -1,0 +1,24 @@
+﻿@{
+	ViewData["Title"] = "EmployeeDetails";
+}
+
+@model WebStore.ViewModels.EmployeeView
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>index</title>
+</head>
+<body>
+	<div>
+		<table>
+			<tr>
+				<td>@Model.FirstName</td>
+				<td>@Model.SurName</td>
+				<td>@Model.Age</td>
+			</tr>
+		</table>
+		@Html.ActionLink("Home", "Index")
+	</div>
+</body>
+</html>
