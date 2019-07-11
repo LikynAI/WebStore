@@ -7,29 +7,29 @@ using WebStore.ViewModels;
 
 namespace WebStore.Infrastructure.Services
 {
-	public class InMemoryEmployeeData : IEmployeesData
+	public class InMemoryEmployeeService : IEmployeesService
 	{
-		private readonly List<EmployeeView> _employees;
+		private readonly List<EmployeeViewModel> _employees;
 
-		public InMemoryEmployeeData()
+		public InMemoryEmployeeService()
 		{
-			_employees = new List<EmployeeView>
+			_employees = new List<EmployeeViewModel>
 			{
-				new EmployeeView
+				new EmployeeViewModel
 				{
 					Id = 1,
 					FirstName = "Иван",
 					SurName = "Иванов",
 					Age = 27
 				},
-				new EmployeeView
+				new EmployeeViewModel
 				{
 					Id = 1,
 					FirstName = "Иван",
 					SurName = "Иванов",
 					Age = 27
 				},
-				new EmployeeView
+				new EmployeeViewModel
 				{
 					Id = 1,
 					FirstName = "Иван",
@@ -39,7 +39,7 @@ namespace WebStore.Infrastructure.Services
 			};
 		}
 
-		public void AddNew(EmployeeView model)
+		public void AddNew(EmployeeViewModel model)
 		{
 			model.Id = _employees.Max(x => x.Id) + 1;
 			_employees.Add(model);
@@ -58,12 +58,12 @@ namespace WebStore.Infrastructure.Services
 			}
 		}
 
-		public IEnumerable<EmployeeView> GetAll()
+		public IEnumerable<EmployeeViewModel> GetAll()
 		{
 			return _employees;
 		}
 
-		public EmployeeView GetById(int id)
+		public EmployeeViewModel GetById(int id)
 		{
 			return _employees.FirstOrDefault(x => x.Id == id);
 		}

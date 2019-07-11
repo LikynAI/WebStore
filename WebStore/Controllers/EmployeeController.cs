@@ -10,9 +10,9 @@ namespace WebStore.Controllers
 {
 	public class EmployeeController : Controller
 	{
-		public IEmployeesData _employees { get; }
+		public IEmployeesService _employees { get; }
 
-		public EmployeeController(IEmployeesData employees)
+		public EmployeeController(IEmployeesService employees)
 		{
 			_employees = employees;
 		}
@@ -40,10 +40,10 @@ namespace WebStore.Controllers
 		{
 			if (!id.HasValue)
 			{
-				return View(new EmployeeView());
+				return View(new EmployeeViewModel());
 			}
 
-			EmployeeView model = _employees.GetById(id.Value);
+			EmployeeViewModel model = _employees.GetById(id.Value);
 			if (model == null)
 			{
 				return NotFound();
@@ -55,8 +55,13 @@ namespace WebStore.Controllers
 		}
 
 		[HttpPost]
-		public IActionResult Edit(EmployeeView model)
+		public IActionResult Edit(EmployeeViewModel model)
 		{
+			if (!ModelState.IsValid)
+			{
+				return View(model);
+			}
+
 			if (model.Id > 0)
 			{
 				var dbItem = _employees.GetById(model.Id);

@@ -77,7 +77,7 @@ using WebStore.ViewModels;
 					");
             EndContext();
             BeginContext(511, 923, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "33d594b06e184960aed2d6b3a4ede3c8", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "cbe232a30aa64f4ebab20e5d48876f75", async() => {
                 BeginContext(599, 828, true);
                 WriteLiteral(@"
 						<div class=""form-group col-md-6"">

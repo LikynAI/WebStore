@@ -6,15 +6,15 @@ using WebStore.ViewModels;
 
 namespace WebStore.Infrastructure.Interfaces
 {
-	public interface IEmployeesData 
+	public interface IEmployeesService 
 	{
-		IEnumerable<EmployeeView> GetAll();
+		IEnumerable<EmployeeViewModel> GetAll();
 
-		EmployeeView GetById(int id);
+		EmployeeViewModel GetById(int id);
 
 		void Commit();
 
-		void AddNew(EmployeeView model);
+		void AddNew(EmployeeViewModel model);
 
 		void Delete(int id);
 	}

@@ -59,7 +59,7 @@ using WebStore.ViewModels;
             WriteLiteral("\r\n<section id=\"form\">\r\n\t<!--form-->\r\n\t<div class=\"container\">\r\n\t\t<div class=\"row\">\r\n\t\t\t<div class=\"col-sm-4 col-sm-offset-1\">\r\n\t\t\t\t<div class=\"login-form\">\r\n\t\t\t\t\t<!--login form-->\r\n\t\t\t\t\t<h2>Login to your account</h2>\r\n\t\t\t\t\t");
             EndContext();
             BeginContext(266, 309, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "85d310ffca404ca5beb43394b3b6972f", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "279c82decd3f4d1e9e3a11206083bbe7", async() => {
                 BeginContext(283, 285, true);
                 WriteLiteral(@"
 						<input type=""text"" placeholder=""Name"" />
@@ -90,7 +90,7 @@ using WebStore.ViewModels;
             WriteLiteral("\r\n\t\t\t\t</div><!--/login form-->\r\n\t\t\t</div>\r\n\t\t\t<div class=\"col-sm-1\">\r\n\t\t\t\t<h2 class=\"or\">OR</h2>\r\n\t\t\t</div>\r\n\t\t\t<div class=\"col-sm-4\">\r\n\t\t\t\t<div class=\"signup-form\">\r\n\t\t\t\t\t<!--sign up form-->\r\n\t\t\t\t\t<h2>New User Signup!</h2>\r\n\t\t\t\t\t");
             EndContext();
             BeginContext(805, 262, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9bc5f931ff824861a37a74c94f85c674", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "50ad26b3ce5f4ddb834487c23d32ddce", async() => {
                 BeginContext(822, 238, true);
                 WriteLiteral("\r\n\t\t\t\t\t\t<input type=\"text\" placeholder=\"Name\" />\r\n\t\t\t\t\t\t<input type=\"email\" placeholder=\"Email Address\" />\r\n\t\t\t\t\t\t<input type=\"password\" placeholder=\"Password\" />\r\n\t\t\t\t\t\t<button type=\"submit\" class=\"btn btn-default\">Signup</button>\r\n\t\t\t\t\t");
                 EndContext();
