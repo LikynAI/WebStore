@@ -7,10 +7,10 @@ using WebStore.Domain.Filters;
 
 namespace WebStore.Infrastructure.Interfaces
 {
-	public interface IProductService
-	{
-		IEnumerable<Section> GetSections();
-		IEnumerable<Brand> GetBrands();
-		IEnumerable<Product> GetProducts(ProductFilter filter);
-	}
+    public interface IProductService
+    {
+        IEnumerable<Section> GetSections();
+        IEnumerable<Brand> GetBrands();
+        IEnumerable<Product> GetProducts(ProductFilter filter);
+    }
 }

@@ -1,4 +1,4 @@
-﻿@model IEnumerable<WebStore.ViewModels.EmployeeViewModel>
+﻿@model IEnumerable<WebStore.ViewModels.EmployeeView>
 @{
     ViewData["Title"] = "Список сотрудников";
 }
@@ -21,6 +21,7 @@
             </td>
             <td><a asp-action="Edit" asp-route-id="@item.Id"><i class="fa fa-edit"></i></a></td>
             <td>@item.SurName</td>
+            <td>@item.Patronymic</td>
             <td>@item.Age</td>
             <td><a asp-action="Delete" asp-route-id="@item.Id"><i class="fa fa-cut"></i></a></td>
         </tr>

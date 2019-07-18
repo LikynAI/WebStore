@@ -1,95 +1,116 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using WebStore.Infrastructure.Interfaces;
 using WebStore.ViewModels;
 
 namespace WebStore.Controllers
 {
-	public class EmployeeController : Controller
-	{
-		public IEmployeesService _employees { get; }
+    [Route("users")]
+    public class EmployeeController : Controller
+    {
+        public IEmployeesData _employees { get; }
 
-		public EmployeeController(IEmployeesService employees)
-		{
-			_employees = employees;
-		}
-
-
-		public IActionResult Index()
+        public EmployeeController(IEmployeesData employees)
         {
-			return View(_employees.GetAll());
-		}
+            _employees = employees;
+        }
 
-		public IActionResult Details(int id)
-		{
-			var employee = _employees.GetById(id);
+        [Route("all")]
+        public IActionResult Index()
+        {
+            //return new HttpNotAuthorizedResult();
+            //return StatusCode(500);
+            //return new RedirectResult("");
+            //return new RedirectToActionResult();
+            //return new PartialViewResult();
+            //return new JsonResult("");
+            //return new NotFoundResult();
+            //return new FileContentResult();        
+            //return new EmptyResult();
+            //return new ContentResult();
 
-			if (employee == null)
-				return NotFound();
-			else
-			{
-				return View(employee);
-			}
-		}
+            //return View("Details", _employees);
+            return View(_employees.GetAll());
+        }
 
-		[HttpGet]
-		public IActionResult Edit(int? id)
-		{
-			if (!id.HasValue)
-			{
-				return View(new EmployeeViewModel());
-			}
+        [Route("{id}")]
+        public IActionResult Details(int id)
+        {
+            //throw new ApplicationException("Что-то пошло не так...");
 
-			EmployeeViewModel model = _employees.GetById(id.Value);
-			if (model == null)
-			{
-				return NotFound();
-			}
-			else
-			{
-				return View(model);
-			}
-		}
+            // Получаем сотрудника по Id
+            var employee = _employees.GetById(id);
 
-		[HttpPost]
-		public IActionResult Edit(EmployeeViewModel model)
-		{
-			if (!ModelState.IsValid)
-			{
-				return View(model);
-			}
+            // Если такого не существует
+            if (employee == null)
+                return NotFound();// возвращаем результат 404 Not Found
 
-			if (model.Id > 0)
-			{
-				var dbItem = _employees.GetById(model.Id);
+            // Иначе возвращаем сотрудника
+            return View(employee);
+        }
 
-				if (ReferenceEquals(dbItem, null))
-					return NotFound();
+        [HttpGet]
+        [Route("edit/{id?}")]
+        public IActionResult Edit(int? id)
+        {
+            if (!id.HasValue)
+            {
+                return View(new EmployeeView());
+            }
 
-				dbItem.FirstName = model.FirstName;
-				dbItem.SurName = model.SurName;
-				dbItem.Age = model.Age;
-			}
-			else 
-			{
-				_employees.AddNew(model);
-			}
+            EmployeeView model = _employees.GetById(id.Value);
+            if (model == null)
+            {
+                return NotFound();// возвращаем результат 404 Not Found
+            }
 
-			_employees.Commit();
+            return View(model);
+        }
 
-			return RedirectToAction(nameof(Index));
-		}
+        [HttpPost]
+        [Route("edit/{id?}")]
+        public IActionResult Edit(EmployeeView model)
+        {
+            if (model.Age < 18 || model.Age > 100)
+            {
+                ModelState.TryAddModelError("Age", "Пользователь должен быть совершеннолетним");
+            }
 
-		[Route("delete/{id}")]
-		public IActionResult Delete(int id)
-		{
-			_employees.Delete(id);
+            if (!ModelState.IsValid) // Проверяем модель на валидность
+            {
+                return View(model);
+            }
 
-			return RedirectToAction(nameof(Index));
-		}
+            if (model.Id > 0) // если есть Id, то редактируем модель
+            {
+                var dbItem = _employees.GetById(model.Id);
 
-	}
+                if (ReferenceEquals(dbItem, null))
+                    return NotFound();// возвращаем результат 404 Not Found
+
+                dbItem.FirstName = model.FirstName;
+                dbItem.SurName = model.SurName;
+                dbItem.Age = model.Age;
+                dbItem.Patronymic = model.Patronymic;
+            }
+            else // иначе добавляем модель в список
+            {
+                _employees.AddNew(model);
+            }
+
+            _employees.Commit(); // станет актуальным позднее (когда добавим БД)
+
+            return RedirectToAction(nameof(Index));
+        }
+
+        [Route("delete/{id}")]
+        public IActionResult Delete(int id)
+        {
+            _employees.Delete(id);
+
+            return RedirectToAction(nameof(Index));
+        }
+    }
 }

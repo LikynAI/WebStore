@@ -7,42 +7,45 @@ using WebStore.Domain.Filters;
 using WebStore.Infrastructure.Interfaces;
 using WebStore.ViewModels;
 
+// For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+
 namespace WebStore.Controllers
 {
-	public class CatalogController : Controller
-	{
-		private readonly IProductService _productService;
+    public class CatalogController : Controller
+    {
+        private readonly IProductService _productService;
 
-		public CatalogController(IProductService productService)
-		{
-			_productService = productService;
-		}
+        public CatalogController(IProductService productService)
+        {
+            _productService = productService;
+        }
 
-		public IActionResult Shop(int? sectionId, int? brandId)
-		{
-			var products = _productService.GetProducts( new ProductFilter()
-			{ SectionId = sectionId, BrandId = brandId });
+        public IActionResult Shop(int? sectionId, int? brandId)
+        {
+            var products = _productService.GetProducts(
+                new ProductFilter() {SectionId = sectionId, BrandId = brandId});
 
-			var model = new CatalogViewModel()
-			{
-				BrandId = brandId,
-				SectionId = sectionId,
-				Products = products.Select(p => new ProductViewModel()
-				{
-					Id = p.Id,
-					ImageUrl = p.ImageUrl,
-					Name = p.Name,
-					Order = p.Order,
-					Price = p.Price
-				}).OrderBy(p => p.Order).ToList()
-			};
+            // сконвертируем в CatalogViewModel
+            var model = new CatalogViewModel()
+            {
+                BrandId = brandId,
+                SectionId = sectionId,
+                Products = products.Select(p => new ProductViewModel()
+                {
+                    Id = p.Id,
+                    ImageUrl = p.ImageUrl,
+                    Name = p.Name,
+                    Order = p.Order,
+                    Price = p.Price
+                }).OrderBy(p => p.Order).ToList()
+            };
 
-			return View(model.Products);
-		}
+            return View(model);
+        }
 
-		public IActionResult ProductDetails()
-		{
-			return View();
-		}
-	}
+        public IActionResult ProductDetails()
+        {
+            return View();
+        }
+    }
 }

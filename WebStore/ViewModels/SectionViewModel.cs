@@ -6,19 +6,24 @@ using WebStore.Domain.Entities.Base.Interfaces;
 
 namespace WebStore.ViewModels
 {
-	public class SectionViewModel : INamedEntity, IOrderedEntity
-	{
-		public SectionViewModel()
-		{
-			ChildSections = new List<SectionViewModel>();
-		}
+    public class SectionViewModel : INamedEntity, IOrderedEntity
+    {
+        public SectionViewModel()
+        {
+            ChildSections = new List<SectionViewModel>();
+        }
 
-		public int Id { get; set; }
-		public string Name { get; set; }
-		public int Order { get; set; }
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public int Order { get; set; }
 
-		public List<SectionViewModel> ChildSections { get; set; }
-
-		public SectionViewModel ParentSection { get; set; }
-	}
+        /// <summary>
+        /// Дочерние секции
+        /// </summary>
+        public List<SectionViewModel> ChildSections { get; set; }
+        /// <summary>
+        /// Родительская секция
+        /// </summary>
+        public SectionViewModel ParentSection { get; set; }
+    }
 }
